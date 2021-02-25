@@ -1,6 +1,7 @@
 import pygame as pg,sys
 from pygame.locals import *
 import time
+import codecs
 
 #initialize global variables
 XO = 'covid'
@@ -52,10 +53,17 @@ def draw_status():
 
     if winner is None:
         message = XO.upper() + "'s Turn"
-    else:
+    elif winner is "covid":
         message = winner.upper() + " won!"
+        # message = winner.upper() + " won! \\U0001F622"
+    elif winner is "vaccine":
+        message = winner.upper() + " won!"
+        # message = winner.upper() + " won! \\U0001F600"
     if draw:
-        message = 'Game Over xD!'
+        message = "Game Over! xD"
+        # message = 'Game Over \\U0002F60'
+    
+    # message = codecs.decode(message, 'unicode_escape')
 
     font = pg.font.Font(None, 30)
     text = font.render(message, 1, (255, 255, 255))
