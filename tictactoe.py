@@ -54,10 +54,10 @@ def draw_status():
     if winner is None:
         message = XO.upper() + "'s Turn"
     elif winner is "covid":
-        message = winner.upper() + " won!"
+        message = winner.upper() + " won! :'("
         # message = winner.upper() + " won! \\U0001F622"
     elif winner is "vaccine":
-        message = winner.upper() + " won!"
+        message = winner.upper() + " won! :D"
         # message = winner.upper() + " won! \\U0001F600"
     if draw:
         message = "Game Over! xD"
@@ -93,7 +93,7 @@ def check_win():
             winner = TTT[0][col]
             #draw winning line
             pg.draw.line (screen, (0,255,0),((col + 1)* width/3 - width/6, 0),\
-                          ((col + 1)* width/3 - width/6, height), 8)
+                    ((col + 1)* width/3 - width/6, height), 8)
             break
 
     # check for diagonal winners
